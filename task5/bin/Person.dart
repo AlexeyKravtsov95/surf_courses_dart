@@ -1,6 +1,6 @@
 abstract class Person {
-  String name;
-  int age;
+  final String name;
+  final int age;
 
   @override
   String toString() {

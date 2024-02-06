@@ -2,17 +2,17 @@ import 'Person.dart';
 import 'Role.dart';
 
 class Gamer extends Person {
-  int countOfGame;
-  String team;
-  RolePlayer role;
+  final int countOfGame;
+  final String team;
+  final RolePlayer role;
 
   Gamer(
-    String name, 
-    int age,
+    super.name,
+    super.age,
     this.countOfGame,
     this.team,
     this.role,
-  ) : super(name, age);
+  );
 
   @override
   String toString() {

@@ -5,11 +5,11 @@ class Trainer extends Person {
   String coachTeam;
 
   Trainer(
-    String name,
-    int age,
+    super.name, 
+    super.age,
     this.trophiesWin,
     this.coachTeam,
-  ) : super(name, age);
+  );
 
   @override
   String toString() {
