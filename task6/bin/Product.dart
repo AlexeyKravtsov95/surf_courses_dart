@@ -15,6 +15,6 @@ class Product {
 
   @override
   String toString() {
-    return "$id\t$category\t$name\t$price руб.\t$count шт.";
+    return 'Product{id: $id, category: $category, name: $name, price: $price, quantity: $count}';
   }
 }
