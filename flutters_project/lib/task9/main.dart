@@ -42,7 +42,7 @@ class _AnimationDemoPageState extends State<AnimationDemoPage> with TickerProvid
     _controller = AnimationController(
       duration: const Duration(seconds: 2), 
       vsync: this)
-      ..repeat(reverse: true);
+      ..reset();
     _animation = CurvedAnimation(
       parent: _controller, 
       curve: Curves.elasticInOut
@@ -51,9 +51,9 @@ class _AnimationDemoPageState extends State<AnimationDemoPage> with TickerProvid
 
   @override
   void dispose() {
-    super.dispose();
-
     _controller.dispose();
+
+    super.dispose();
   }
 
   void _startAnimation() {
