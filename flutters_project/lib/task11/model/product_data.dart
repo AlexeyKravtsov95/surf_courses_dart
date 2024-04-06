@@ -5,7 +5,7 @@ class ProductData {
 /// 
 /// Можете дополнить этот список самостоятельно, если хотите протестировать
 /// приложение более объёмно.
-final dataForStudents = <ProductEntity>[
+static final dataForStudents = <ProductEntity>[
   ProductEntity(
     title: 'Арбуз',
     price: 1200,
