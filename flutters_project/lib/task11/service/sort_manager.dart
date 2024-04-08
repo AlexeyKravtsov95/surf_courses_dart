@@ -9,6 +9,14 @@ class SortManager {
         return sortToHightPrice(products);
       case SortType.hightToLow:
         return sortToLowPrice(products);
+      case SortType.byNameFromA:
+        return sortByNameFromA(products);
+      case SortType.byNameToA:
+        return sortByNameToA(products);
+      case SortType.byTypeFromA:
+        return sortByNameFromA(products);
+      case SortType.byTypeToA:
+        return sortByTypeToA(products);
       default:
         return products;
     }
