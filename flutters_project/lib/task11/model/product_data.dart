@@ -8,7 +8,7 @@ class ProductData {
 static final dataForStudents = <ProductEntity>[
   ProductEntity(
     title: 'Арбуз',
-    price: 1200,
+    price: 120,
     category: Category.food,
     imageUrl:
         'https://images.unsplash.com/photo-1589984662646-e7b2e4962f18?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80',
@@ -17,7 +17,7 @@ static final dataForStudents = <ProductEntity>[
   ),
   ProductEntity(
     title: 'Дыня',
-    price: 1400,
+    price: 140,
     category: Category.food,
     amount: Grams(2000),
     imageUrl:
@@ -25,7 +25,7 @@ static final dataForStudents = <ProductEntity>[
   ),
   ProductEntity(
     title: 'Телевизор',
-    price: 2100000,
+    price: 21000,
     category: Category.tech,
     amount: Quantity(1),
     imageUrl:
@@ -33,7 +33,7 @@ static final dataForStudents = <ProductEntity>[
   ),
   ProductEntity(
     title: 'Миксер',
-    price: 250000,
+    price: 2500,
     category: Category.tech,
     amount: Quantity(1),
     imageUrl:
@@ -41,7 +41,7 @@ static final dataForStudents = <ProductEntity>[
   ),
   ProductEntity(
     title: 'Крем для загара',
-    price: 90000,
+    price: 900,
     category: Category.care,
     amount: Quantity(1),
     imageUrl:
@@ -49,7 +49,7 @@ static final dataForStudents = <ProductEntity>[
   ),
   ProductEntity(
     title: 'Крем защитный',
-    price: 1900,
+    price: 190,
     category: Category.care,
     amount: Quantity(1),
     imageUrl:
@@ -57,7 +57,7 @@ static final dataForStudents = <ProductEntity>[
   ),
   ProductEntity(
     title: 'Pebsi',
-    price: 9000,
+    price: 90,
     category: Category.drinks,
     amount: Quantity(1),
     imageUrl:
@@ -65,7 +65,7 @@ static final dataForStudents = <ProductEntity>[
   ),
   ProductEntity(
     title: 'Shpryte',
-    price: 10200,
+    price: 100,
     category: Category.drinks,
     amount: Quantity(1),
     imageUrl:
