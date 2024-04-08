@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutters_project/task11/assets/strings.dart';
 import 'package:flutters_project/task11/model/product_data.dart';
 import 'package:flutters_project/task11/model/product_entity.dart';
 import 'package:flutters_project/task11/model/sort_type.dart';
 import 'package:flutters_project/task11/service/sort_manager.dart';
 import 'package:flutters_project/task11/widget/bottom_nav_bar_widget.dart';
-import 'package:flutters_project/task11/resources/style.dart';
 import 'package:flutters_project/task11/widget/filter_widget.dart';
 import 'package:flutters_project/task11/widget/item_widget.dart';
 import 'package:flutters_project/task11/widget/product_total_widget.dart';
@@ -29,47 +29,41 @@ class _ProductListWidget extends State<ProductListWidget> {
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
-        title: const Column(
+        title: Column(
           children: [
             Text(
-              'Чек № 56',
-              style: TextStyle(
-                color: ColorsData.text,
-                fontSize: 18,
-                fontWeight: FontWeight.w700
-              ),
+              AppStrings.chequeTitle,
+              style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                color: Theme.of(context).colorScheme.secondary
+              )
             ),
             Text(
-              '24.02.23 в 12:23',
-              style: TextStyle(
-                color: ColorsData.secondaryText,
-                fontSize: 10,
-                fontWeight: FontWeight.w400,
-              ),
+              AppStrings.chequeDate,
+              style: Theme.of(context).textTheme.displaySmall!.copyWith(
+                color: Theme.of(context).colorScheme.primaryContainer
+              )
             ),
           ],
         ),
-        leading: const Icon(
+        leading: Icon(
           Icons.arrow_back,
-          color: ColorsData.arrowColor,
+          color: Theme.of(context).colorScheme.onPrimary,
         ),
         backgroundColor: Colors.white,
       ),
       bottomNavigationBar: const BottomNavBar(),
       
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 24),
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 24),
         child: Column(children: [
            Row(
             children: [
               Expanded(
                 child: Text(
-                  'Список покупок',
-                  style: TextStyle(
-                    color: ColorsData.text,
-                    fontSize: 18,
-                    fontWeight: FontWeight.w700,
-                  ),
+                  AppStrings.productListTitle,
+                  style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                    color: Theme.of(context).colorScheme.secondary
+                  )
                 ),
               ),
               SortButtonWidget(
@@ -123,7 +117,7 @@ class _ProductListWidget extends State<ProductListWidget> {
                 }),
               ),
               const Divider(),
-              ProductTotalWidget(),
+              const ProductTotalWidget(),
         ]),
       ),
     );

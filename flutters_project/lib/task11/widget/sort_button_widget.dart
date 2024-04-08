@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutters_project/task11/model/sort_type.dart';
-import 'package:flutters_project/task11/resources/style.dart';
 
 class SortButtonWidget extends StatelessWidget {
   final SortType sortType;
@@ -21,7 +20,7 @@ class SortButtonWidget extends StatelessWidget {
         height: 32,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8),
-          color: ColorsData.iconsBackgroundColor
+          color: Theme.of(context).colorScheme.secondaryContainer
         ),
         child: Stack(
           alignment: Alignment.bottomRight,
@@ -29,16 +28,16 @@ class SortButtonWidget extends StatelessWidget {
             Center(
               child: Icon(
                 Icons.sort,
-                color: ColorsData.iconsColor,
+                color: Theme.of(context).colorScheme.primaryContainer,
               ),
             ),
             if (sortType != SortType.withoutSort)
-              const Positioned(
+                Positioned(
                   right: 4,
                   bottom: 4,
                   child: Icon(
                     Icons.circle,
-                    color: ColorsData.lightGreen,
+                    color: Theme.of(context).colorScheme.onPrimary,
                     size: 8,
                 ),
               ),

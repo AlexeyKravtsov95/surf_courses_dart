@@ -1,24 +1,46 @@
 import 'package:flutters_project/task11/model/product_entity.dart';
 import 'package:flutters_project/task11/model/sort_type.dart';
-import 'package:flutters_project/task11/service/sort_product.dart';
 
 class SortManager {
   List<ProductEntity> sortType(List<ProductEntity> products, SortType value) {
     switch(value) {
       case SortType.lowToHight:
-        return sortToHightPrice(products);
+        return _sortToHightPrice(products);
       case SortType.hightToLow:
-        return sortToLowPrice(products);
+        return _sortToLowPrice(products);
       case SortType.byNameFromA:
-        return sortByNameFromA(products);
+        return _sortByNameFromA(products);
       case SortType.byNameToA:
-        return sortByNameToA(products);
+        return _sortByNameToA(products);
       case SortType.byTypeFromA:
-        return sortByNameFromA(products);
+        return _sortByTypeFromA(products);
       case SortType.byTypeToA:
-        return sortByTypeToA(products);
+        return _sortByTypeToA(products);
       default:
         return products;
     }
+  }
+
+  List<ProductEntity> _sortToHightPrice(List<ProductEntity> products) {
+    return products..sort((a, b) => a.price.compareTo(b.price));
+  }
+
+  List<ProductEntity> _sortToLowPrice(List<ProductEntity> products) {
+    return products..sort((b, a) => a.price.compareTo(b.price));
+  }
+
+  List<ProductEntity> _sortByNameFromA(List<ProductEntity> products) {
+    return products..sort((a, b) => a.title.compareTo(b.title));
+  }
+
+  List<ProductEntity> _sortByNameToA(List<ProductEntity> products) {
+    return products..sort((b, a) => a.title.compareTo(b.title));
+  }
+
+  List<ProductEntity> _sortByTypeFromA(List<ProductEntity> products) {
+    return products..sort((a, b) => a.category.name.compareTo(b.category.name));
+  }
+  List<ProductEntity> _sortByTypeToA(List<ProductEntity> products) {
+    return products..sort((b, a) => a.category.name.compareTo(b.category.name));
   }
 }

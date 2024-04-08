@@ -1,5 +1,4 @@
-import 'package:flutter/widgets.dart';
-import 'package:flutters_project/task11/resources/style.dart';
+import 'package:flutter/material.dart';
 
 class SortedText extends StatelessWidget {
   final String text;
@@ -13,10 +12,8 @@ class SortedText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
-      style: const TextStyle(
-        color: ColorsData.secondaryText,
-        fontSize: 16,
-        fontWeight: FontWeight.w400
+      style: Theme.of(context).textTheme.headlineMedium!.copyWith(
+        color: Theme.of(context).colorScheme.primaryContainer
       ),
     );
   }

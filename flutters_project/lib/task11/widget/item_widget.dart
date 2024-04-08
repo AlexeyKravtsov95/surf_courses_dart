@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutters_project/task11/model/product_entity.dart';
-import 'package:flutters_project/task11/resources/style.dart';
 import 'package:flutters_project/task11/service/utils.dart';
 
 class ItemWidget extends StatelessWidget {
@@ -20,11 +19,8 @@ class ItemWidget extends StatelessWidget {
       children: [
         if(hasCategory) ...[
           Text(products.category.name,
-          style: const TextStyle(
-            fontSize: 16,
-            fontWeight: FontWeight.w700,
-            color: ColorsData.text,
-            ),
+          style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+            color: Theme.of(context).colorScheme.secondary)
           ),
           const SizedBox(height: 16)
         ],
@@ -52,52 +48,40 @@ class ItemWidget extends StatelessWidget {
                 children: [
                   Text(
                     products.title,
-                    style: const TextStyle(
-                      fontSize: 12,
-                      fontWeight: FontWeight.w400,
-                      color: ColorsData.text,
+                    style: Theme.of(context).textTheme.displayMedium!.copyWith(
+                      color: Theme.of(context).colorScheme.secondary
                     ),
                   ),
                   Row(
                     children: [
                       if(products.amount is Quantity)
                       Text('${products.amount.value.toString()} шт',
-                        style: const TextStyle(
-                        fontSize: 12,
-                        fontWeight: FontWeight.w400,
-                        color: ColorsData.text,
+                        style: Theme.of(context).textTheme.displayMedium!.copyWith(
+                          color: Theme.of(context).colorScheme.secondary
                         ),
                       ),
                       if(products.amount is Grams)
                       Text('${getAmountGrams(products.amount.value)} кг',
-                      style: const TextStyle(
-                        fontSize: 12,
-                        fontWeight: FontWeight.w400,
-                        color: ColorsData.text,
+                      style: Theme.of(context).textTheme.displayMedium!.copyWith(
+                        color: Theme.of(context).colorScheme.secondary
                         ),
                       ),
                       const Spacer(),
                       if (products.sale > 0)
                       Text(
                         '${products.price.toString()} руб',
-                        style: const TextStyle(
+                        style: Theme.of(context).textTheme.displayMedium!.copyWith(
+                          color: Theme.of(context).colorScheme.tertiary,
                           decoration: TextDecoration.lineThrough,
-                          decorationColor: ColorsData.lightGrey,
-                          fontSize: 12,
-                          fontWeight: FontWeight.w400,
-                          color: ColorsData.lightGrey,
+                          decorationColor: Theme.of(context).colorScheme.tertiary
                         ),
                       ),
                       const SizedBox(width: 16),
                       Text(
                         '${getTotalPriceWithSale(products)} руб',
-                        style: TextStyle(
-                          fontSize: 12,
-                          fontWeight: FontWeight.w700,
-                          color: (products.sale > 0) 
-                          ? ColorsData.errorColor 
-                          : ColorsData.text
-                        ),
+                        style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                          color: (products.sale > 0) ? Theme.of(context).colorScheme.error : Theme.of(context).colorScheme.secondary
+                        )
                       ),
                     ],
                   ),
